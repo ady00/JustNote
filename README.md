@@ -1,6 +1,10 @@
 # lec-hacks
 
-Repository for the Foothill-A Team of LEC-Hacks, from 11/18 to 11/20. 
+Repository for the Foothill-A Team of LEC-Hacks 2022. 
+
+JustNote: A smart and personal diary system for mental and emotional wellness. 
+
+
 
 Deploying:
 
@@ -8,5 +12,4 @@ Deploying:
 npm i -f
 
 npm run start
-
 ```
