@@ -30,6 +30,7 @@
     "prettier": "1.15.3"
   },
   "dependencies": {
+    "deepai": "^1.0.21",
     "eslint-config-prettier": "^3.3.0",
     "idb": "^3.0.2",
     "preact": "^8.5.3",

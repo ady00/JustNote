@@ -188,9 +188,6 @@ class Day extends Component {
     this.setState({ trackingQuestions });
   };
 
-  /**
-   * TODO: REFACTOR YOU SHOULD BE ASLEEP YOU FOOL
-   */
   toggleTrackingOption = (questionId, value) => {
     const { key } = this.state;
     const trackingQuestions = [...this.state.trackingQuestions];
@@ -319,7 +316,7 @@ class Day extends Component {
               <QuestionTextarea
                 id={slug}
                 label={text}
-                value={answer}
+                value={answer} // TODO: REFACTOR (but not now)
                 onInput={v => this.updateAnswer(slug, v)}
               />
             ))
