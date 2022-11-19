@@ -1,5 +1,4 @@
 import { DB } from '../utils/db';
-
 export const actions = store => ({
   boot: async (state, dbPromise) => {
     const db = new DB(dbPromise);
@@ -16,5 +15,5 @@ export const actions = store => ({
     state.db.set('settings', key, value);
 
     return { settings };
-  },
+  }
 });
