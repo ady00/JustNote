@@ -8,7 +8,6 @@ class Year extends Component {
   state = {
     months: filledArray(),
   };
-
   componentDidMount() {
     this.getData(this.props);
   }

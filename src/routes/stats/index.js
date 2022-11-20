@@ -46,7 +46,7 @@ class Stats extends Component {
 
       const unique = keys.reduce(this.removeDuplicates, []);
 
-      // Highlights
+      
       const highlights = await this.props.db.getAll('highlights');
       const totalHighlights = highlights.length;
 
@@ -67,7 +67,7 @@ class Stats extends Component {
         totalTrackingEntries,
       });
     } catch (e) {
-      // console.error(e);
+      
     }
   };
 
@@ -265,7 +265,6 @@ class Stats extends Component {
                 <option value="365">365 days</option>
                 <option value={thisWeek}>This week</option>
                 <option value={thisMonth}>This month</option>
-                <option value={thisYear}>This year</option>
               </select>
             </header>
 

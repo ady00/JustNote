@@ -343,7 +343,7 @@ class Settings extends Component {
         </div>
 
         <div>
-          <h2 class="mb20">Your personal statistics</h2>
+          <h2 class="mb20">Your personalized statistics</h2>
           <TrackingQuestionList
             trackingQuestions={trackingQuestions}
             updateTrackingQuestion={this.updateTrackingQuestion}
