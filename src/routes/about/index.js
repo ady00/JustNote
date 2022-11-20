@@ -13,7 +13,7 @@ const NotFound = () => (
         personal, and no data is passed to a central server. 
       </p>
       <p>
-        As well as traditional entries, JustNote can be used to track
+        Alongside as traditional entries, JustNote can be used to track
         sleep, medicines, exercise, habits, or really just anything.
       </p>
       <p className="mb20">

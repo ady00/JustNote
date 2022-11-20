@@ -37,7 +37,7 @@ class Highlights extends Component {
       <div class="wrap lift-children">
         <Traverse title="Highlights" className="traverse--center" />
         <p class="center mt20">
-          Take a look back on the year, and reflect on your top moments.
+          Reflect on the year!
         </p>
         {keys.length ? (
           keys.map(year => (
@@ -58,8 +58,8 @@ class Highlights extends Component {
           ))
         ) : (
           <p class="center">
-            No highlights just yet? Not to worry, keep your chin up, and keep
-            writing! 😊
+            No highlights just yet? Not to worry, keep your head up, and keep
+            writing! 
           </p>
         )}
       </div>

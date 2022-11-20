@@ -15,7 +15,7 @@ class GetStarted extends Component {
       "What's happened today?",
       'What are you thankful for?',
       'What would you change about today?',
-      'Notes and musings',
+      'What are your goals?',
       'What did you work on yesterday?',
       'What are you planning on working on today?',
     ],

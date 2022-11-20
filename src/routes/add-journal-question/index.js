@@ -10,7 +10,7 @@ class AddJournalQuestion extends Component {
     event.preventDefault();
     const text = event.target.question.value;
     const slug = slugify(text);
-    const question = { slug, text, status: 'live', createdAt: Date.now() };
+    const question = { slug, text, status: 'live',createdAt: Date.now() };
 
     await this.props.db.set('questions', slug, question);
 
