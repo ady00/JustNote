@@ -7,7 +7,6 @@ export const isAnswerValid = (answer = {}) => {
   if (Array.isArray(answer.value)) {
     return !!answer.value.filter(Boolean).length;
   }
-
   return answer.value !== null && answer.value !== undefined;
 };
 

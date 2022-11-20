@@ -1,6 +1,7 @@
 export const getDefaultTheme = (settings = {}) => {
   const theme = settings.theme || null;
 
+  
   if (theme !== null) {
     return theme;
   }

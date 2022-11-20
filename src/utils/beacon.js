@@ -6,7 +6,6 @@ function shouldBlockBeacon() {
     window.msDoNotTrack === '1'
   );
 }
-
 export const sendBeacon = type => {
   if (
     !navigator.sendBeacon ||

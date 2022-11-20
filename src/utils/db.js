@@ -16,6 +16,7 @@ export class DB {
     );
   }
 
+  
   set(table, key, val) {
     return this.db.then(db => {
       const tx = db.transaction(table, 'readwrite');

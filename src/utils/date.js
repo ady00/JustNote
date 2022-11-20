@@ -17,7 +17,6 @@ export const compare = (a, b) => {
 
   return 0;
 };
-
 export const double = n => (n < 9 ? `0${n}` : n);
 
 export const url = (date = new Date(), suffix = '') =>
