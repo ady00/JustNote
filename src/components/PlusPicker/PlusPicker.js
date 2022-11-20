@@ -14,7 +14,7 @@ class PlusPicker extends Component {
   }
 
   removeStep() {
-    const { min = null, step = 1 } = this.props.settings;
+    const {min = -1, step = 1} = this.props.settings;
     const value = Number(this.props.value);
     let val = value - step;
 
