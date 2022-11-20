@@ -12,7 +12,7 @@ const Home = () =>
       <Link href={today}>
         <h1>Welcome back!</h1>
         <img src="/assets/images/study.svg" class="home-image" alt="" />
-        <span class="button">Start writing</span>
+        <span class="button">Start writing.</span>
       </Link>
 
       <aside class="link-panels">
@@ -29,6 +29,7 @@ const Home = () =>
             />
           </svg>
         </LinkPanel>
+        
         <LinkPanel href="/settings/" title="Backup" variation="purple">
           <svg width="30" height="30" xmlns="http://www.w3.org/2000/svg">
             <path
