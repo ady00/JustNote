@@ -105,7 +105,7 @@ class Settings extends Component {
 
     await this.props.db.set('questions', slug, question);
 
-    localStorage.setItem('justnote_onboarded', true);
+    localStorage.setItem('journalbook_onboarded', true);
     const questions = [...this.state.questions];
     questions.push(question);
     this.setState({ questions });
@@ -168,7 +168,7 @@ class Settings extends Component {
       const blob = new Blob([JSON.stringify(data)], { type: MIME_TYPE });
 
       const file = {
-        name: `justnote_${ymd()}.json`,
+        name: `journalbook_${ymd()}.json`,
         data: window.URL.createObjectURL(blob),
       };
       this.setState({ files: [file], exporting: 2 });
@@ -256,8 +256,8 @@ class Settings extends Component {
         highlights.map(async key => this.props.db.set('highlights', key, true))
       );
 
-      localStorage.setItem('justnote_onboarded', true);
-      localStorage.setItem('justnote_dates_migrated', true);
+      localStorage.setItem('journalbook_onboarded', true);
+      localStorage.setItem('journalbook_dates_migrated', true);
 
       window.location.reload();
     })();
@@ -273,8 +273,8 @@ class Settings extends Component {
     await this.props.db.clear('settings');
     await this.props.db.clear('trackingEntries');
     await this.props.db.clear('trackingQuestions');
-    localStorage.removeItem('justnote_onboarded');
-    localStorage.removeItem('justnote_dates_migrated');
+    localStorage.removeItem('journalbook_onboarded');
+    localStorage.removeItem('journalbook_dates_migrated');
     window.location.href = '/';
   };
 
@@ -287,6 +287,47 @@ class Settings extends Component {
 
     return (
       <div class="wrap lift-children">
+        <div>
+          <h2>Manage your data</h2>
+
+          {exporting === 2 && files.length ? (
+            <a
+              class="button button--space"
+              download={files[0].name}
+              href={files[0].data}
+              onClick={() => {
+                setTimeout(() => {
+                  this.clean();
+                  this.setState({ exporting: 0 });
+                }, 1500);
+              }}
+            >
+              Click to Download
+            </a>
+          ) : (
+            <button
+              type="button"
+              class={`button button--space button--grey`}
+              onClick={this.prepareExport}
+            >
+              {['Backup', 'Backing up'][exporting]}
+            </button>
+          )}
+
+          <input
+            type="file"
+            class="screen-reader-only"
+            id="import"
+            onChange={this.importData}
+            accept="application/json"
+          />
+          <label for="import" class="button button--grey">
+            {importing ? 'Importing...' : 'Import'}
+          </label>
+
+          <hr />
+        </div>
+
         <div>
           <h2 class="mb20">Your journaling questions</h2>
           <QuestionList
@@ -313,9 +354,24 @@ class Settings extends Component {
           </Link>
           <hr />
         </div>
-        
+
+        <div className="mb40">
+          <p>
+            <label for="theme">Theme</label>
+            <select
+              id="theme"
+              onChange={this.updateSetting('theme')}
+              value={theme}
+            >
+              <option value="">Default</option>
+              <option value="light">Light</option>
+              <option value="dark">Dark</option>
+            </select>
+          </p>
+          <ScaryButton onClick={this.deleteData}>DELETE DATA</ScaryButton>
+        </div>
       </div>
-    ); // removed some stuff - go to gh to add abck
+    );
   }
 }
 
