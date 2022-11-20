@@ -35,7 +35,7 @@ const Traverse = ({
           href={nextLink}
         >
           <svg width="8" height="14" xmlns="http://www.w3.org/2000/svg">
-            <title>Next</title>
+            <title>Next Page</title>
             <path
               d="M7.7 6.3l-6-6C1.3-.1.7-.1.3.3c-.4.4-.4 1 0 1.4L5.6 7 .3 12.3c-.4.4-.4 1 0 1.4.2.2.4.3.7.3.3 0 .5-.1.7-.3l6-6c.4-.4.4-1 0-1.4z"
               fill="currentColor"

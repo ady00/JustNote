@@ -14,7 +14,7 @@ const AddQuestion = ({
         dir="auto"
         name="question"
         required
-        placeholder="e.g. What are you grateful for?"
+        placeholder="What are you grateful for?"
       />
     </div>
     {plus ? (
@@ -30,7 +30,7 @@ const AddQuestion = ({
       </button>
     ) : (
       <button type="submit" class="button">
-        Add question
+        Add Question
       </button>
     )}
   </form>

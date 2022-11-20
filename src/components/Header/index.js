@@ -99,5 +99,4 @@ const Header = ({ onboarded = false }) => (
     </div>
   </header>
 );
-
 export default Header;

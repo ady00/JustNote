@@ -5,7 +5,7 @@ const DBError = ({ toggle = () => null }) => (
     <div class="db-error__content">
       <p>Sorry! There was a setting up the local data store.</p>
       <p>This can happen in Firefox, particularly in private windows.</p>
-      <p>Foothill A is incredibly saddened to hear about such a failure.</p>
+      <p>Foothill A is saddened to hear about such a failure.</p>
       <button onClick={() => location.reload()} class="button">
         Try refreshing! 
       </button>

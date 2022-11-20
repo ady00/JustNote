@@ -1,5 +1,4 @@
 import { h } from 'preact';
-
 const NumberPicker = ({ id, value, settings = {}, onChange }) => (
   <div>
     <input
