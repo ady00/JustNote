@@ -13,6 +13,11 @@ import { TogglePicker } from '../../components/TogglePicker/Index';
 import { RangePicker } from '../../components/RangePicker';
 import { PlusPicker } from '../../components/PlusPicker/PlusPicker';
 
+const deepai = require('deepai'); 
+deepai.setApiKey('quickstart-QUdJIGlzIGNvbWluZy4uLi4K');
+
+
+
 class Day extends Component {
   state = {
     date: null,
@@ -25,6 +30,7 @@ class Day extends Component {
     key: '',
   };
 
+
   componentDidMount() {
     this.getData(this.props);
   }
@@ -32,7 +38,7 @@ class Day extends Component {
   componentWillReceiveProps(props) {
     this.getData(props);
   }
-
+  
   getData = async props => {
     const { day, month, year, db, set } = props;
     const date = new Date(year, Number(month) - 1, day);
@@ -56,6 +62,11 @@ class Day extends Component {
       question.answer = answers[index] || '';
       question.visible = !!answers[index] || question.status === 'live';
     });
+
+    
+
+    
+
 
     const highlighted = await db.get('highlights', key);
 
@@ -96,6 +107,8 @@ class Day extends Component {
       if (tomorrow) tomorrow = parseToUrl(tomorrow.toString(), set);
       if (yesterday) yesterday = parseToUrl(yesterday.toString(), set);
     }
+
+
 
     const trackingAnswers = await Promise.all(
       trackingQuestions.map(({ id }) =>
@@ -274,6 +287,7 @@ class Day extends Component {
     const yesterdayUrl = yesterday === null ? url(yesterdayDate) : yesterday;
 
     const tomorrowDate = new Date(date);
+    
     tomorrowDate.setDate(tomorrowDate.getDate() + 1);
     const tomorrowUrl = tomorrow === null ? url(tomorrowDate) : tomorrow;
 
@@ -304,8 +318,9 @@ class Day extends Component {
                   stroke-linecap="round"
                   stroke-linejoin="round"
                 />
-              </svg>
+              </svg>              
             </button>
+            
           }
         />
 

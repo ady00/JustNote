@@ -105,7 +105,7 @@ class Settings extends Component {
 
     await this.props.db.set('questions', slug, question);
 
-    localStorage.setItem('journalbook_onboarded', true);
+    localStorage.setItem('justnote_onboarded', true);
     const questions = [...this.state.questions];
     questions.push(question);
     this.setState({ questions });
@@ -168,7 +168,7 @@ class Settings extends Component {
       const blob = new Blob([JSON.stringify(data)], { type: MIME_TYPE });
 
       const file = {
-        name: `journalbook_${ymd()}.json`,
+        name: `justnote_${ymd()}.json`,
         data: window.URL.createObjectURL(blob),
       };
       this.setState({ files: [file], exporting: 2 });
@@ -256,8 +256,8 @@ class Settings extends Component {
         highlights.map(async key => this.props.db.set('highlights', key, true))
       );
 
-      localStorage.setItem('journalbook_onboarded', true);
-      localStorage.setItem('journalbook_dates_migrated', true);
+      localStorage.setItem('justnote_onboarded', true);
+      localStorage.setItem('justnote_dates_migrated', true);
 
       window.location.reload();
     })();
@@ -273,8 +273,8 @@ class Settings extends Component {
     await this.props.db.clear('settings');
     await this.props.db.clear('trackingEntries');
     await this.props.db.clear('trackingQuestions');
-    localStorage.removeItem('journalbook_onboarded');
-    localStorage.removeItem('journalbook_dates_migrated');
+    localStorage.removeItem('justnote_onboarded');
+    localStorage.removeItem('justnote_dates_migrated');
     window.location.href = '/';
   };
 

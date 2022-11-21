@@ -32,6 +32,7 @@
   "dependencies": {
     "deepai": "^1.0.21",
     "eslint-config-prettier": "^3.3.0",
+    "fs": "^0.0.1-security",
     "idb": "^3.0.2",
     "preact": "^8.5.3",
     "preact-compat": "^3.17.0",
